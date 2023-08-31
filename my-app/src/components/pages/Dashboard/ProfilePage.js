@@ -99,7 +99,10 @@ function ProfilePage() {
   return (
     <>
    <NavigationBar user={user} />
-    <div className="container mx-auto p-8">
+   <div className="bg-gray-100 min-h-screen"> 
+        <div className="container mx-auto p-8 ">
+        <div className="flex flex-col space-y-6">
+          <div className="bg-white rounded-lg shadow-md p-6">
       <h2 className="text-2xl font-semibold mb-4">Profile</h2>
       {user && (
         <div className="grid grid-cols-2 gap-8">
@@ -203,6 +206,9 @@ function ProfilePage() {
           </div>
         </div>
       )}
+   </div>
+    </div>
+    </div>
     </div>
     </>
   );
