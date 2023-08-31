@@ -1,0 +1,18 @@
+MVP
+
+- As a user I would like to be able to login - done
+- As a user I would like to be able to logout - done
+- As a user I would like to be have my own dashboard that says (Dashboard) - done 
+Welcome to your TaskMaster dashboard, David!)
+
+- I would like to add a task, with a set date to be completed and time - done
+- I woild like to set a task as completed, and then that tasked moves to compledted task col - done
+- I would like to be able to delete a task, and the deleted task is removed from my dashboard - done  
+
+- I would like to edit a task, includign the data and time and task content
+- I would like to be able to export my curret todo tasks from task manger to a .txt file and completed tasks too
+- I woudl like a user to be able to change a completed task to uncompleted  - 
+
+
+
+
