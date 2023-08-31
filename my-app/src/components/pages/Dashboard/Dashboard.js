@@ -154,22 +154,32 @@ function Dashboard() {
   };
   
   return (
-    <>
-      <NavigationBar user={user} />
-      <div className="container mx-auto p-8">
-        <h2 className="text-2xl font-semibold mb-4">Dashboard</h2>
-        <p>
-          Welcome to your TaskMaster dashboard,{" "}
-          {user ? user.firstName : "Guest"}!
-        </p>
-      </div>
+      <>
+        <NavigationBar user={user} />
+        <div className="bg-gray-100"> 
+        <div className="container mx-auto p-8 ">
+        <div className="flex flex-col space-y-6">
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <h2 className="text-2xl font-semibold mb-4">Dashboard</h2>
+          <p>
+            Welcome to your TaskMaster dashboard,{" "}
+            {user ? user.firstName : "Guest"}!
+          </p>
+          <p>
+            This is a place where you can manage your tasks, track your progress,
+            and stay organized in your daily activities.
+          </p>
+        </div>
+        </div> 
+        </div>
       <div className="container mx-auto p-8">
         {taskAdded && (
           <div className="bg-green-200 text-green-700 p-2 mb-4">
             Task added successfully!
           </div>
         )}
-        <h3 className="text-lg font-semibold mb-2">Add Task</h3>
+         <div className="bg-white rounded-lg shadow-md p-6 mb-6">
+          <h3 className="text-lg font-semibold mb-2">Add Task</h3>
         <form onSubmit={handleSubmit} className="flex space-x-4">
         <div className="flex-grow">
             <div className="mb-4">
@@ -231,10 +241,11 @@ function Dashboard() {
           </div>
         </form>
       </div>
+      </div>
       <div className="container mx-auto p-8">
         {!isLoading && (
           <div className="flex">
-            <div className="flex-grow">
+            <div className="flex-grow bg-white rounded-lg shadow-md p-6 mb-6">
               <h3 className="text-lg font-semibold mb-2">Tasks in Progress</h3>
               <ul className="border rounded p-4">
                 {tasksInProgress.map((task) => (
@@ -263,7 +274,7 @@ function Dashboard() {
                 ))}
               </ul>
             </div>
-            <div className="flex-grow ml-4">
+            <div className="flex-grow ml-4 bg-white rounded-lg shadow-md p-6 mb-6">
               <h3 className="text-lg font-semibold mb-2">Completed Tasks</h3>
               <ul className="border rounded p-4">
                 {completedTasks.map((task) => (
@@ -289,6 +300,7 @@ function Dashboard() {
         )}
       </div>
       <Outlet />
+      </div>
     </>
   );
 }

@@ -62,11 +62,24 @@ function RegisterPage() {
     }
   };
   
-
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-300 to-purple-600">
-      <div className="bg-white p-8 rounded shadow-md text-center">
-        <h1 className="text-4xl mb-4 font-semibold text-gray-800">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="bg-white w-full max-w-md p-6 rounded-lg shadow-md text-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-12 w-12 mx-auto mb-4 text-indigo-500"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"
+          />
+        </svg>
+        <h1 className="text-2xl mb-4 font-semibold text-gray-800">
           Register for TaskMaster
         </h1>
         {errorMessage && <p className="text-red-500 mb-4">{errorMessage}</p>}
@@ -74,7 +87,7 @@ function RegisterPage() {
           <input
             type="text"
             placeholder="First Name"
-            className="w-full p-3 rounded-lg shadow-md focus:ring focus:ring-indigo-400"
+            className="w-full p-3 rounded-lg border"
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
           />
@@ -83,7 +96,7 @@ function RegisterPage() {
           <input
             type="text"
             placeholder="Last Name"
-            className="w-full p-3 rounded-lg shadow-md focus:ring focus:ring-indigo-400"
+            className="w-full p-3 rounded-lg border"
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
           />
@@ -92,7 +105,7 @@ function RegisterPage() {
           <input
             type="email"
             placeholder="Email"
-            className="w-full p-3 rounded-lg shadow-md focus:ring focus:ring-indigo-400"
+            className="w-full p-3 rounded-lg border"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -101,7 +114,7 @@ function RegisterPage() {
           <input
             type="text"
             placeholder="Username"
-            className="w-full p-3 rounded-lg shadow-md focus:ring focus:ring-indigo-400"
+            className="w-full p-3 rounded-lg border"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
@@ -110,7 +123,7 @@ function RegisterPage() {
           <input
             type="password"
             placeholder="Password"
-            className="w-full p-3 rounded-lg shadow-md focus:ring focus:ring-indigo-400"
+            className="w-full p-3 rounded-lg border"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
@@ -119,7 +132,7 @@ function RegisterPage() {
           <input
             type="password"
             placeholder="Confirm Password"
-            className="w-full p-3 rounded-lg shadow-md focus:ring focus:ring-indigo-400"
+            className="w-full p-3 rounded-lg border"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
@@ -130,11 +143,14 @@ function RegisterPage() {
         >
           Register
         </button>
-        <p className="text-gray-500 mt-4">
+        <p className="text-gray-400 mt-6">
           &copy; {new Date().getFullYear()} TaskMaster. All rights reserved.
         </p>
-        <p className="mt-4">
-          Already have an account? <Link to="/login" className="text-indigo-500">Login here</Link>
+        <p className="mt-4 text-sm text-gray-600">
+          Already have an account?{' '}
+          <Link to="/login" className="text-indigo-500">
+            Login here
+          </Link>
         </p>
       </div>
     </div>

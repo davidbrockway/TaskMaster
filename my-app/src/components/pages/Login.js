@@ -34,9 +34,23 @@ function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-300 to-purple-600">
-      <div className="bg-white p-8 rounded shadow-md text-center">
-        <h1 className="text-4xl mb-4 font-semibold text-gray-800">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="bg-white w-full max-w-md p-6 rounded-lg shadow-md text-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-12 w-12 mx-auto mb-4 text-indigo-500"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"
+          />
+        </svg>
+        <h1 className="text-2xl mb-4 font-semibold text-gray-800">
           Welcome back to TaskMaster
         </h1>
         {errorMessage && <p className="text-red-500 mb-4">{errorMessage}</p>}
@@ -44,7 +58,7 @@ function LoginPage() {
           <input
             type="text"
             placeholder="Username"
-            className="w-full p-3 rounded-lg shadow-md focus:ring focus:ring-indigo-400"
+            className="w-full p-3 rounded-lg border"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
@@ -53,7 +67,7 @@ function LoginPage() {
           <input
             type="password"
             placeholder="Password"
-            className="w-full p-3 rounded-lg shadow-md focus:ring focus:ring-indigo-400"
+            className="w-full p-3 rounded-lg border"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
@@ -67,8 +81,11 @@ function LoginPage() {
         <p className="text-gray-500 mt-4">
           &copy; {new Date().getFullYear()} TaskMaster. All rights reserved.
         </p>
-        <p className="mt-4">
-          Don't have an account? <Link to="/register" className="text-indigo-500">Register here</Link>
+        <p className="mt-4 text-sm text-gray-600">
+          Don't have an account?{' '}
+          <Link to="/register" className="text-indigo-500">
+            Register here
+          </Link>
         </p>
       </div>
     </div>

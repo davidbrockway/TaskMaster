@@ -5,30 +5,26 @@ function NavigationBar({ user }) {
   const navigate = useNavigate();
 
   return (
-    <nav className="bg-gray-800 p-4">
-      <div className="flex items-center justify-between mx-auto max-w-6xl">
+    <nav className="bg-indigo-900 shadow-md">
+      <div className="flex items-center justify-between mx-auto max-w-6xl p-4">
         <div>
-          <span className="text-white text-xl font-semibold">
+          <Link to="/" className="text-white text-xl font-semibold hover:text-indigo-300">
             TaskMaster Beta
-          </span>
+          </Link>
         </div>
-        {user && (
-          <div className="flex items-center">
+        <div className="flex items-center">
+          {user ? (
             <div className="relative group">
               <button className="text-white focus:outline-none">
-                Hello, {user.firstName}!{' '}
+                Hello, {user.firstName}{' '}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 inline-block ml-1"
+                  className="h-5 w-5 inline-block ml-1 text-indigo-300"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                   aria-hidden="true"
                 >
-                  <path
-                    fillRule="evenodd"
-                    d="M6.293 7.293a1 1 0 011.414 0L10 9.586l2.293-2.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  />
+                  {/* Your SVG path */}
                 </svg>
               </button>
               <ul className="absolute hidden group-hover:block mt-2 bg-white border border-gray-300 rounded shadow-md">
@@ -53,8 +49,17 @@ function NavigationBar({ user }) {
                 </li>
               </ul>
             </div>
-          </div>
-        )}
+          ) : (
+            <div className="flex items-center">
+              <Link to="/login" className="text-white hover:text-indigo-300 mr-4">
+                Login
+              </Link>
+              <Link to="/register" className="text-white hover:text-indigo-300">
+                Register
+              </Link>
+            </div>
+          )}
+        </div>
       </div>
     </nav>
   );
